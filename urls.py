@@ -21,9 +21,13 @@ urlpatterns = [
 ]"""
 
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import path
 
+#debido al que sistema entero sera atravez de la interfaces de la admin.site todo sera redirigido hacia la aplicacion
 urlpatterns = [
-    path('polls/', include('polls.urls')),
-    path('admin/', admin.site.urls),
+    path('', admin.site.urls),
 ]
+#Se altera el admin site para perzonalizarlo
+admin.site.site_title = 'ReinaMadre'
+admin.site.site_header = 'ReinaMadre Admin'
+admin.site.index_title = 'ReinaMadre Administración'
